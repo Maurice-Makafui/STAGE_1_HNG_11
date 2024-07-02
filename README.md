@@ -1,4 +1,4 @@
----
+-
 ##User Management Automation Script
 
 
@@ -150,5 +150,4 @@ Contributions are all accepted! Feel free to fork the repository, make improveme
 ##License
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
----
 
