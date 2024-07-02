@@ -27,6 +27,7 @@ The script is designed to be run from the command line. To use it, follow these 
 Clone the repository to your local machine or directly onto your Linux server:
 
 git clone https://github.com/Maurice-Makafui/STAGE_1_HNG_11.git
+
 cd STAGE_1_HNG_11
 
 2. Create a text file with the usernames and groups you want to create. The file should have 
