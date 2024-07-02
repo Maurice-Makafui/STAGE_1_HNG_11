@@ -1,18 +1,19 @@
+---
 ##User Management Automation Script
 
 
 ##he Overview
-On a Linux system, the "create_users.sh" script is intended to automate the process of creating and managing user accounts. The script simplifies user provisioning with an emphasis on efficiency and security by reading an input file that contains usernames and related groups. System administrators and DevOps engineers who are in charge of handling user accounts in dynamic, large-scale settings may find this tool very helpful.
+On a Linux system, the `create_users.sh` script is intended to automate the process of creating and managing user accounts. The script simplifies user provisioning with an emphasis on efficiency and security by reading an input file that contains usernames and related groups. System administrators and DevOps engineers who are in charge of handling user accounts in dynamic, large-scale settings may find this tool very helpful.
 
 ##Features
 
-Automated User Creation: This process uses data from a text file to create users and their principal groups.
+**Automated User Creation**: This process uses data from a text file to create users and their principal groups.
 
-Create safe, unique passwords for every user with the help of random password generation.
-Group Management: Assigns users to designated groups and establishes new ones if none already exist.
+**Create safe, unique passwords for every user with the help of random password generationGroup Management** : Assigns users to designated groups and establishes new ones if none already exist.
 
-Detailed Logging: Records every activity for audit and troubleshooting purposes in /var/log/user_management.log.
-Safe Password Storage: Restricted access passwords are stored safely in "/var/secure/user_passwords.csv".
+**Detailed Logging**: Records every activity for audit and troubleshooting purposes in `/var/log/user_management.log` .
+**Safe Password Storage**: Restricted access passwords are stored safely in`/var/secure/user_passwords.csv`.
+.
 
 ##Requirements needed for successfull task
 
@@ -44,23 +45,32 @@ Felix;fitness,gymgroup
 
 3. Run the script with the following command:
 sudo ./create_users.sh <inputfile.txt>
+
 Execute the script by providing the input file as an argument. Make sure to run it with sufficient privileges (e.g., as root or with sudo):
 
 NB:Replace <input_file> with the path to your input file.
 
 4. Verify the Output
- Upon completion, the script logs all actions to /var/log/user_management.log and stores generated passwords in /var/secure/user_passwords.csv. You can review these files to verify the script's execution:
+ After completion, the script logs all actions to /var/log/user_management.log and stores generated passwords in /var/secure/user_passwords.csv. You can review these files to verify the script's execution:
 
+```bash
 cat /var/log/user_management.log
 sudo cat /var/secure/user_passwords.csv
+```
 
 5. Check Created Users and Groups
 To ensure users and groups have been created correctly, you can use the following commands:
 
-List users: cut -d: -f1 /etc/passwd
-List groups: cut -d: -f1 /etc/group
+- List users: `cut -d: -f1 /etc/passwd`
+- List groups: `cut -d: -f1 /etc/group`
+
+
 Script Details
-create_users.sh
+
+
+## `create_users.sh`
+
+```bash
 #!/bin/bash
 
 # Check if input file is provided
@@ -127,7 +137,7 @@ done < "$INPUT_FILE"
 log_message "User creation process completed"
 
 echo "Script execution completed. Check $LOG_FILE for details."
-
+```
 my nternship Journey with HNG so far
 The creation of "create_users.sh" is evidence of the priceless knowledge I acquired throughout my HNG internship. This rigorous curriculum gave me the tools I needed to hone my DevOps abilities, face practical problems, and come up with workable answers. Having the chance to work on dynamic, large-scale projects has strengthened my automation and system administration skills.
 
@@ -139,4 +149,6 @@ Contributions are all accepted! Feel free to fork the repository, make improveme
 
 ##License
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+---
 
