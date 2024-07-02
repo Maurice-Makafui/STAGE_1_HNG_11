@@ -1,8 +1,10 @@
-User Management Automation Script
-The Overview
+##User Management Automation Script
+
+
+##he Overview
 On a Linux system, the "create_users.sh" script is intended to automate the process of creating and managing user accounts. The script simplifies user provisioning with an emphasis on efficiency and security by reading an input file that contains usernames and related groups. System administrators and DevOps engineers who are in charge of handling user accounts in dynamic, large-scale settings may find this tool very helpful.
 
-Features
+##Features
 
 Automated User Creation: This process uses data from a text file to create users and their principal groups.
 
@@ -12,17 +14,21 @@ Group Management: Assigns users to designated groups and establishes new ones if
 Detailed Logging: Records every activity for audit and troubleshooting purposes in /var/log/user_management.log.
 Safe Password Storage: Restricted access passwords are stored safely in "/var/secure/user_passwords.csv".
 
-Requirements needed for successfull task
+##Requirements needed for successfull task
+
 Linux environment (tested on Ubuntu)
 Bash shell
 OpenSSL for password generation
 Root or sudo privileges to execute user and group management commands
 Usage
+The script is designed to be run from the command line. To use it, follow these steps:
+
 1. Clone the Repository
 Clone the repository to your local machine or directly onto your Linux server:
 
 git clone https://github.com/Maurice-Makafui/STAGE_1_HNG_11.git
 cd STAGE_1_HNG_11
+
 2. Create a text file with the usernames and groups you want to create. The file should have 
 
 username;group1,group2,group3
