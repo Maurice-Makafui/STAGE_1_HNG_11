@@ -36,8 +36,12 @@ username;group1,group2,group3
 check the example below:
 
 Maurice1;staging,development,deployment
+
 Gwenny;prayergroup
+
 Felix;fitness,gymgroup
+
+
 3. Run the script with the following command:
 sudo ./create_users.sh <inputfile.txt>
 Execute the script by providing the input file as an argument. Make sure to run it with sufficient privileges (e.g., as root or with sudo):
