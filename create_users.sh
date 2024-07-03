@@ -1,5 +1,12 @@
 #!/bin/bash
 
+#Ensure the script is run as root
+if [ "$EUID" -ne 0 ]; then
+  echo "Please run as root"
+  exit 1
+fi
+
+
 # Check if input file is provided
 if [ -z "$1" ]; then
   echo "Usage: $0 <input_file>"
