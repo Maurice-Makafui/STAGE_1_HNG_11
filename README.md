@@ -1,10 +1,13 @@
 -
 ##User and group Management  Script by Maurice Makafui
+--
 
 ##The Overview
+--
 On a Linux system, the `create_users.sh` script is intended to automate the process of creating and managing user accounts. The script simplifies user provisioning with an emphasis on efficiency and security by reading an input file that contains usernames and related groups. System administrators and DevOps engineers who are in charge of handling user accounts in dynamic, large-scale settings may find this tool very helpful.
 
 ##Features
+--
 
 **Automated User Creation**: This process uses data from a text file to create users and their principal groups.
 
@@ -14,7 +17,8 @@ On a Linux system, the `create_users.sh` script is intended to automate the proc
 **Safe Password Storage**: Restricted access passwords are stored safely in`/var/secure/user_passwords.csv`.
 .
 
-##Requirements needed for successfull task
+##Requirements needed for successfull task.
+--
 
 Linux environment (tested on Ubuntu)
 Bash shell
@@ -47,6 +51,7 @@ Staging, dev, and www-data are the group names.
 
 
 Run this command to output all current human users.
+--
 <awk -F: '$3 >= 1000 {print $1}' /etc/passwd>
 
 Note: Do well to look out for the groups in your input text file
@@ -58,6 +63,7 @@ Note: You could also output all existing users with
  but it will output all users, not just human users.
 
 Run the id command for a specific user
+--
 id <username>
 
 sample case.
@@ -70,10 +76,11 @@ Run the following command to view and verify all the home directories of the cre
 cd /home && ls
 
 Run this to output all groups
-
+--
 cat /etc/group
-Run this to check the existence of specific groups
 
+Run this to check the existence of specific groups
+--
 getent group <groupname>
 
 eg.
@@ -88,7 +95,7 @@ Once you run it with the specific group name, it will show you the group (if it 
 and the users assigned to it. If not, it will show no output.
 
 Run this to output content of log file
-
+--
 cat /var/log/user_management.log
 
 Run this command to verify the access permissions on /var/log/user_management.log
@@ -168,7 +175,8 @@ create_user() {
     echo "Added user $username to group $group" | tee -a "$LOGFILE"
   done
 
-  # Set up home directory permissions
+
+# Set up home directory permissions
   chmod 700 /home/"$username"
   chown "$username:$username" /home/"$username"
   echo "Set up home directory for user $username" | tee -a "$LOGFILE"
@@ -190,11 +198,12 @@ while IFS=';' read -r username groups; do
 done < "$1"
 
 echo "User creation process completed." | tee -a "$LOGFILE"
+
 ```
 
 
 
-my nternship Journey with HNG so far
+My nternship Journey with HNG so far
 The creation of "create_users.sh" is evidence of the priceless knowledge I acquired throughout my HNG internship. This rigorous curriculum gave me the tools I needed to hone my DevOps abilities, face practical problems, and come up with workable answers. Having the chance to work on dynamic, large-scale projects has strengthened my automation and system administration skills.
 
 
