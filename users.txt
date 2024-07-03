@@ -1,12 +1,6 @@
 
 
 
-
-
-
-
-
-
 Maurice1;staging,development,deployment
 
 Gwenny;prayergroup
